@@ -14,7 +14,7 @@ jobs:
       # 4194304 / 2048 = 2048 (MebiByte)
       - run: diskutil partitionDisk $(hdiutil attach -nomount ram://4194304) 1 GPTFormat APFS 'ramdisk' '100%'
       - run: diskutil info /Volumes/ramdisk
-      - run: diskutil mount -mountPoint gettext /dev/disk1s2
+      - run: diskutil mount -mountPoint gettext /dev/disk3s1
       - run: curl -fsSLO https://ftp.gnu.org/pub/gnu/gettext/gettext-0.21.tar.xz
         working-directory: gettext
       - run: tar fvx gettext-0.21.tar.xz
